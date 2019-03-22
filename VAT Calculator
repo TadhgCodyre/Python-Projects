@@ -1,0 +1,28 @@
+VATadd = []
+VATtotal = []
+def main():
+    salesFig = []
+    while (True):
+        sales = int(input("Please enter the sales figures: "))
+        if (sales == -1):
+            break
+        else:
+            addVAT(salesFig, sales)
+            salesFig.append(sales)
+
+    print("The sales figures entered were:",salesFig)
+    print("The sales figures including VAT were", VATadd)            
+    print("The total VAT charged is",sum(VATtotal))
+    print("The total sales for this period are",sum(VATadd))
+
+
+
+def addVAT(salesFig, sales):
+    VATP1 = sales * (.23)
+    VATtotal.append(VATP1)
+
+    VATP2 = sales + VATP1
+    VATadd.append(VATP2)
+    return VATtotal, VATadd
+
+main()
